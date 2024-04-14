@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crafts Gallery</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="Title">
+        <h1>Crafts</h1>
+        <button id="addCraftBtn" class="add-btn">+ Add Craft</button>
+    </div>
+
+    <div class="w3-row-padding w3-padding-16 w3-center" id="crafts">
+    </div>
+
+    <div id="craftModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <br>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+            <img id="craftImage" src="" alt="Craft Image" style="width:100%">
+            <div id="craftInfo"></div>
+        </div>
+    </div>
+
+    <div id="addCraftModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="addCraftForm">
+                <h2>Add New Craft</h2>
+                <label for="craftName">Name:</label>
+                <input type="text" id="craftName" name="craftName" required>
+
+                <label for="craftImageInput">Image:</label>
+                <input type="file" id="craftImageInput" name="craftImage" style="display:none;" accept="image/*" required>
+                <div id="selectImageBtn">Select An Image</div>
+                <img id="previewImage" src="" alt="Image Preview" style="max-width:100px; display:none;">
+
+                <label for="craftDescription">Description:</label>
+                <textarea id="craftDescription" name="craftDescription" required></textarea>
+
+                <div id="suppliesContainer">
+                    <label>Supplies:</label>
+                    <input type="text" name="supplies[]" required>
+                </div>
+                <button type="button" id="addSupplyBtn">+ Add Supply</button>
+
+                <button type="submit">Save</button>
+                <button type="button" id="cancelBtn">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="editCraftModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="closeEdit">&times;</span>
+            <form id="editCraftForm">
+                <h2>Edit Craft</h2>
+                <label for="editCraftName">Name:</label>
+                <input type="text" id="editCraftName" name="editCraftName" required>
+    
+                <label for="editCraftDescription">Description:</label>
+                <textarea id="editCraftDescription" name="editCraftDescription" required></textarea>
+    
+                <label>Supplies:</label>
+                <div id="editSuppliesContainer">
+                    
+                    <input type="text" name="editSupplies[]" required>
+                </div>
+                <button type="button" id="addEditSupplyBtn">+ Add Supply</button>
+    
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
